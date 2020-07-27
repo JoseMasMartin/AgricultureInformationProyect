@@ -30,8 +30,10 @@ class PlantController extends Controller
         $plant= new Plant(['name'=> $inputs['name'],
             'description'=> $inputs['description'],
             'enfermedad'=> $inputs['enfermedad'],
-            'plaga'=> $inputs['plague']
+            'plaga'=> $inputs['plague'],
+            'photo'=> $inputs['imagen']
         ]);
+        /*
         if($r->hasFile('imagen')) {
 
             $img = $r->file('imagen');
@@ -40,6 +42,7 @@ class PlantController extends Controller
 
             Storage::disk('public')->put($img->getFilename() . '.' . $extension, File::get($img));
         }
+        */
         $plant->save();
         return redirect('/plants');
     }
@@ -53,6 +56,7 @@ class PlantController extends Controller
     {
         $inputs = $r->all();
         $plant = Plant::find($id);
+        /*
         if($r->hasFile('imagen'))
         {
 
@@ -64,11 +68,12 @@ class PlantController extends Controller
         //uploads/File_name.pn
             $plant->photo='uploads/'.$img->getFilename().'.'.$extension;
         }
-
+        */
         $plant->name = $inputs['name'];
         $plant->description = $inputs['description'];
         $plant->enfermedad = $inputs['enfermedades'];
         $plant->plaga = $inputs['plague'];
+        $plant->photo = $inputs['imagen'];
 
         $plant->save();
 
@@ -77,7 +82,7 @@ class PlantController extends Controller
     public function destroy($id)
     {
         $plants = Plant::find($id);
-        File::delete($plants->photo);
+       // File::delete($plants->photo);
             $plants->delete();
         return redirect('/plants');
     }

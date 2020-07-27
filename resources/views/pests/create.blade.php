@@ -58,10 +58,11 @@
                 </div>
             </div>
 
+
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="imagen" class="control-label">Imagen:</label>
-                    <input type="file" class="form-control"  accept="image/*" name="imagen"/>
+                    <label for="imagen" class="control-label">URL O Direccion De La Imagen:</label>
+                    <input type="text" name="imagen" id="imagen" class="form-control">
                 </div>
             </div>
             @auth

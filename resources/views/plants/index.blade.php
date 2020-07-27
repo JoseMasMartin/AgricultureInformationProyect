@@ -71,24 +71,26 @@
                 </td>
                 <td>
                     <div class="des" style="width: 400px; text-align: justify">
-                    <font  size=4&gt; face="Comic Sans MS,Arial,Verdana">
-                        {{$p->description}}
-                    </font>
+                        <font  size=4&gt; face="Comic Sans MS,Arial,Verdana">
+                            {{$p->description}}
+                        </font>
                     </div>
                 </td>
 
                 <td>
-                    <font color=red;size=4&gt; face="Comic Sans MS,Arial,Verdana">
-                        {{$p->enfermedad}}
-                    </font>
+                    <div class="des" style="width: 215px; text-align: justify">
+                        <font color=red;size=4&gt; face="Comic Sans MS,Arial,Verdana">
+                            {{$p->enfermedad}}
+                        </font>
+                    </div>
                 </td>
                 <td>
-                    <font color="#daa520"; size=4&gt; face="Comic Sans MS,Arial,Verdana">
-                        {{$p->plaga}}
-                    </font>
+                    <div class="des" style="width: 215px; text-align: justify">
+                        <font color="#daa520"; size=4&gt; face="Comic Sans MS,Arial,Verdana">
+                            {{$p->plaga}}
+                        </font>
+                    </div>
                 </td>
-
-
             @auth
                     @if(Auth::user()->role->nombreRol=='admin')
                 <td><a href="/plants/{{$p->id}}/edit" class="btn btn-warning">
